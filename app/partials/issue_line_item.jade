@@ -1,0 +1,13 @@
+select(ng-change="updateIssueRank(issue)", ng-model="issue.rank")
+  option(value="0") Unranked
+  option(value="1") Low Priority
+  option(value="2") Medium Priority
+  option(value="3") High Priority
+  option(value="4") Really High Priority
+
+a(ng-href="{{issue.html_url}}") @
+span {{issue.title}}
+
+small
+  a(ng-href="{{issue.repository.html_url}}")
+    span {{issue.repository.full_name}}
