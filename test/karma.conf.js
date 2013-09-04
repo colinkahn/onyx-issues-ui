@@ -12,6 +12,8 @@ files = [
   '../vendor/bower/jquery/jquery.js',
   '../vendor/bower/underscore/underscore.js',
   '../vendor/bower/angular/angular.js',
+  '../vendor/bower/angular-route/angular-route.js',
+  '../vendor/bower/angular-animate/angular-animate.js',
   '../vendor/bower/angular-mocks/angular-mocks.js',
 
   'partials/*.html',

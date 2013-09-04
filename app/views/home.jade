@@ -2,23 +2,42 @@ h1 Onyx Issues
 
 div(ng-switch="state")
   div(ng-switch-when="not-authorized")
-    form
-      input(ng-model="login.username")
-      input(type="password", ng-model="login.password")
-      button(ng-click="loginAs(login)") Login
+    form.login-form
+      .control-group
+        input.login-field(
+          id          = "login-user"
+          type        = "text"
+          ng-model    = "login.username"
+          placeholder = "Enter your username"
+        )
+        label.fui-user.login-field-icon(for="login-user")
+      .control-group
+          input.login-field(
+            id          = "login-pass"
+            type        = "password"
+            ng-model    = "login.password"
+            placeholder = "Enter your password"
+          )
+          label.fui-lock.login-field-icon(for="login-pass")
+
+      button.btn.btn-primary.btn-block.btn-large(ng-click="loginAs(login)") Login
 
   div(ng-switch-when="authorized")
-    
+    hr
+
+    button.btn.btn-large.btn-block.btn-primary(ng-click="getIssues()")
+      span Refresh Issues
+
+    hr
+
     h2 New Issues
-    ul
-      li(
-        ng-repeat  = "issue in issues | filter: {is_new: true}: true"
-        ng-include = "templates.issue_line_item"
-      )
-      
+    ul.issues-list
+      issue-li(ng-repeat="issue in issues | filter: {is_new: true}: true")
+      li.no-new-issues
+        h5 No New Issues
+
+    hr
+
     h2 Prioritized Issues
-    ul
-      li(
-        ng-repeat  = "issue in issues | filter: !{is_new: true}: true"
-        ng-include = "templates.issue_line_item"
-      )
+    ul.issues-list
+      issue-li(ng-animate="'issue-animate'", ng-repeat="issue in issues | filter: !{is_new: true}: true | orderBy: '-rank'")

@@ -1,13 +1,16 @@
-select(ng-change="updateIssueRank(issue)", ng-model="issue.rank")
-  option(value="0") Unranked
-  option(value="1") Low Priority
-  option(value="2") Medium Priority
-  option(value="3") High Priority
-  option(value="4") Really High Priority
+li.row
+  .span1
+    a.btn.btn-inverse.btn-block(ng-href="{{issue.html_url}}")
+      span.fui-eye
 
-a(ng-href="{{issue.html_url}}") @
-span {{issue.title}}
+  .span3
+    select(
+        fui-select
+        fui-select-styles="rankStyles"
+        ng-change="updateIssueRank(issue)"
+        ng-model="issue.rank"
+        ng-options="value as key for (key, value) in rankings"
+      )
 
-small
-  a(ng-href="{{issue.repository.html_url}}")
-    span {{issue.repository.full_name}}
+  .span8
+    h3 {{issue.title}}

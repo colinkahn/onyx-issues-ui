@@ -1,0 +1,50 @@
+@keyframes panic
+  0%
+    background-color #E74C3C
+    -webkit-transform scale(1.0) rotate(0deg)
+  33%
+    background-color #C0392B
+    -webkit-transform scale(1.1) rotate(-5deg)
+  50%
+    background-color #E74C3C
+  67%
+    background-color #C0392B
+    -webkit-transform scale(1.1) rotate(5deg)
+  100%
+    background-color #E74C3C
+    -webkit-transform scale(1.0) rotate(0deg)
+
+.issues-list
+  list-style none
+  margin-left 0
+  margin-top 20px
+  .fui-eye
+    font-size 20px
+  .btn-panic
+    position relative
+    z-index 100
+    animation panic 5s infinite
+  li+.no-new-issues
+      display none
+
+.issue-animate-enter 
+.issue-animate-leave 
+    transition 1000ms cubic-bezier(0.250, 0.250, 0.750, 0.750) all
+    position relative
+    display block
+ 
+.issue-animate-leave.issue-animate-leave-active
+.issue-animate-enter
+    opacity 0
+    height 0px
+ 
+.issue-animate-enter.issue-animate-enter-active
+.issue-animate-leave
+    opacity 1
+    height 30px
+
+.login-form
+  width 313px
+  margin 200px auto
+  &:before
+    display none

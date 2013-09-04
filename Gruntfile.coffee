@@ -31,10 +31,36 @@ module.exports = (grunt) ->
           "vendor/bower/jquery/jquery.js"
           "vendor/bower/underscore/underscore.js"
           "vendor/bower/angular/angular.js"
+          "vendor/bower/angular-route/angular-route.js"
+          "vendor/bower/angular-animate/angular-animate.js"
+          # Flat UI JS
+          "vendor/bower/flat-ui-official/js/jquery-ui-1.10.3.custom.min.js"
+          "vendor/bower/flat-ui-official/js/jquery.ui.touch-punch.min.js"
+          "vendor/bower/flat-ui-official/js/bootstrap.min.js"
+          "vendor/bower/flat-ui-official/js/bootstrap-select.js"
+          "vendor/bower/flat-ui-official/js/bootstrap-switch.js"
+          "vendor/bower/flat-ui-official/js/flatui-checkbox.js"
+          "vendor/bower/flat-ui-official/js/flatui-radio.js"
+          "vendor/bower/flat-ui-official/js/jquery.tagsinput.js"
+          "vendor/bower/flat-ui-official/js/jquery.placeholder.js"
+          "vendor/bower/flat-ui-official/js/jquery.stacktable.js"
+          "vendor/bower/flat-ui-official/js/application.js"
         ]
       css:
         dest: "build/css/app.css"
-        src: ["tmp/import.css"]
+        src: [
+          "tmp/import.css"
+          "vendor/bower/flat-ui-official/bootstrap/css/bootstrap.css"
+        ]
+      flat_ui_css:
+        dest: "build/css/flat-ui.css"
+        src: ["vendor/bower/flat-ui-official/css/flat-ui.css"]
+    copy:
+      flat_ui_fonts:
+        expand: true
+        src: ["vendor/bower/flat-ui-official/fonts/*"]
+        dest: "build/fonts/"
+        flatten: true
     stylus:
       compile:
         options:
@@ -143,6 +169,7 @@ module.exports = (grunt) ->
     "stylus"
     "jade"
     "concat"
+    "copy"
     "clean"
   ]
 

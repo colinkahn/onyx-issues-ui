@@ -1,0 +1,16 @@
+{
+  "name": "angular-animate",
+  "version": "1.2.0-rc.1",
+  "main": "./angular-animate.js",
+  "dependencies": {
+    "angular": "1.2.0-rc.1"
+  },
+  "gitHead": "4e6147d34c5e08bf9e7743bd36da35f19b265bf0",
+  "_id": "angular-animate@1.2.0-rc.1",
+  "readme": "ERROR: No README.md file found!",
+  "description": "ERROR: No README.md file found!",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/angular/bower-angular-animate.git"
+  }
+}

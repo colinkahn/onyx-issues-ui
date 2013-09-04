@@ -1,10 +1,10 @@
 {
   "name": "angular",
-  "version": "1.0.8",
+  "version": "1.2.0rc1",
   "main": "./angular.js",
   "dependencies": {},
-  "gitHead": "b2006330eef656b8e89a883feff7d7d2f3e5afed",
-  "_id": "angular@1.0.8",
+  "gitHead": "5b6d6a99ee0889ef4cc4b14b830db4b9e5bca2eb",
+  "_id": "angular@1.2.0rc1",
   "readme": "ERROR: No README.md file found!",
   "description": "ERROR: No README.md file found!",
   "repository": {
